@@ -1,0 +1,24 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#slider {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#slider #scroller {
+    display: flex;
+    transition: transform ease-in-out 1s;
+}
+
+img {
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 100vw;
+
+    opacity: 1;
+    transition: ease-in-out 1s;
+}

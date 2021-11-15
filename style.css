@@ -22,3 +22,13 @@ img {
     opacity: 1;
     transition: ease-in-out 1s;
 }
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.material-icons {
+    color: #fff;
+}

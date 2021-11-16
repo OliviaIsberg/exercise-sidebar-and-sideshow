@@ -1,9 +1,21 @@
+.flex {display: flex;}
+.column{flex-direction: column;}
+.row{flex-direction: row;}
+.between{justify-content: space-between;}
+.pointer{cursor: pointer;}
+
 html, body {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'Segoe Light', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
 #slider {
+    
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -14,21 +26,69 @@ html, body {
     transition: transform ease-in-out 1s;
 }
 
-img {
+#slider img {
+    top: 0; left: 0; right: 0; bottom: 0;
     flex-grow: 1;
     flex-shrink: 0;
     width: 100vw;
-
+    height: 100vh;
     opacity: 1;
     transition: ease-in-out 1s;
+    object-fit: cover;
 }
 
-aside {
+#burgerIcon {
     position: fixed;
+    top: 0;
+    left: 0;
+    color: wheat;
+    display: none;
+}
+
+#sidemenu {
+    position: absolute;
+    width: 0;
+    height: 100%;
     top: 0;
     left: 0;
 }
 
-.material-icons {
+#sidemenu.show {
+    display: block;
+    width: 100%;
+}
+
+#sidemenu #aside {
+    position: fixed;
+    top: 0;
+    left: 0;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+
+#sidemenu #aside .label {
+    display: none;
+}
+
+#sidemenu.show #aside .label {
+    display: inline;
+}
+
+
+aside span {
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    #burgerIcon {
+        display: inline;
+    }
+
+    #sidemenu {
+        display: none;
+    }
 }
